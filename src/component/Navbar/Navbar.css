@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap; /* ✅ Ensures no overflow on smaller screens */
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0; /* ✅ Prevent logo from shrinking */
+}
+
+.khana {
+  color: #1e1e1e;
+}
+
+.khazana {
+  color: #e63946;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  padding: 4px 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* On hover */
+.navbar-menu li a:hover {
+  color: #49557e;
+}
+
+/* Active state */
+.navbar-menu li.active a {
+  color: #49557e;
+  font-weight: 600;
+}
+
+.navbar-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #49557e;
+  bottom: -4px;
+  left: 0;
+}
+
+
+.navbar-menu li:hover,
+.navbar-menu li.active {
+  color: #49557e;
+  font-weight: 600;
+}
+
+.navbar-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #49557e;
+  bottom: -4px;
+  left: 0;
+}
+
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #49557e;
+  border: 1px solid #f86262;
+  padding: 8px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #ea4e33;
+  color: white;
+}
+
+/* Basket Icon with Dot */
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 50%;
+  top: -6px;
+  right: -6px;
+}
+/* Screens below 1050px */
+@media (max-width: 1050px) {
+  .logo-text {
+    font-size: 28px;
+  }
+
+  .navbar-menu {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .navbar-right {
+    gap: 20px;
+  }
+
+  .navbar button {
+    padding: 6px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Screens below 900px */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .navbar-menu {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 12px;
+    gap: 16px;
+    font-size: 15px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+}
+
+/* Screens below 750px */
+@media (max-width: 750px) {
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .navbar button {
+    width: 100%;
+    padding: 8px;
+  }
+}
