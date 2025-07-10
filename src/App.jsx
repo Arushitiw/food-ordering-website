@@ -5,7 +5,7 @@ import Cart from './pages/Cart/Cart'
 import  Home  from './pages/Home/Home'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Header from './component/Header/Header'
-import Footer from './component/footer/footer'
+import Footer from './component/Footer/Footer'
 import Loginpopup from './component/Loginpopup/Loginpopup'
 
 
